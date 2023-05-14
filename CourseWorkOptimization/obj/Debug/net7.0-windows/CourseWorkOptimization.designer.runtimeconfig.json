@@ -1,0 +1,12 @@
+{
+  "runtimeOptions": {
+    "tfm": "net7.0",
+    "additionalProbingPaths": [
+      "C:\\Users\\ksysh\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\ksysh\\.nuget\\packages"
+    ],
+    "configProperties": {
+      "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true
+    }
+  }
+}

@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net6.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWPF>true</UseWPF>
+        <StartupObject></StartupObject>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Remove="Image1.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="ChartDirector.Net" Version="7.0.0" />
+        <PackageReference Include="ChartDirector.Net.Desktop.Controls" Version="7.0.0" />
+        <PackageReference Include="OxyPlot.Core" Version="2.1.2" />
+        <PackageReference Include="OxyPlot.Wpf" Version="2.1.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Resource Include="Image1.png" />
+        <Resource Include="Resources\Image1.png" />
+    </ItemGroup>
+
+</Project>
