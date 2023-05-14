@@ -54,7 +54,7 @@ public class Charts
                 for (int xIndex = 0; xIndex < dataX.Length; ++xIndex) {
                     double x = dataX[xIndex];
                     //double t = Math.Pow((x - y), 2) + Math.Pow((x + y - 10), 2) / 9;
-                    dataZ[yIndex * dataX.Length + xIndex] = _algorithm.GetS(x, y);
+             //       dataZ[yIndex * dataX.Length + xIndex] = _algorithm.GetS(x, y);
                     //dataZ[yIndex * dataX.Length + xIndex] = t;
                 }
             }
@@ -166,7 +166,7 @@ public class Charts
             for (var xIndex = 0; xIndex < dataX.Length; ++xIndex)
             {
                 var x = dataX[xIndex];
-                dataZ[yIndex * dataX.Length + xIndex] = _algorithm.GetS(x, y);
+              //  dataZ[yIndex * dataX.Length + xIndex] = _algorithm.GetS(x, y);
             }
         }
 
