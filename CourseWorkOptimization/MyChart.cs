@@ -62,15 +62,23 @@ double Peaks(double x, double y) => _algorithm.GetS(x, y);
             Data = peaksData,
         };
         MyModel.Series.Add(cs);
-        var solutions = new ScatterSeries
+        _algorithm.Calculate();
+        _algorithm.Nesterov();
+        var line = new LineSeries
         {
-            MarkerType = MarkerType.Circle,
-            MarkerFill = OxyColor.FromRgb(0xFF, 0, 0)
+            StrokeThickness = 1,
+            Color = OxyColors.Cyan
         };
-
-        MyModel.Series.Add(solutions);
-
-        MyModel.Series.Add(new ScatterSeries());
+        _algorithm.List.ForEach(x => line.Points.Add(
+            new DataPoint(x.FirstElement, x.SecondElement)));
+        MyModel.Series.Add(line);
+        var line2 = new LineSeries
+        {
+            StrokeThickness = 1,
+            Color = OxyColors.Gold
+        };
+        _algorithm.ListNesterov.ForEach(x => line2.Points.Add(new DataPoint(x.FirstElement, x.SecondElement)));
+        MyModel.Series.Add(line2);
     }
     public PlotModel MyModel { get; private set; }
 }

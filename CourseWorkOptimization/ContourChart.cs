@@ -180,8 +180,9 @@ namespace OxyPlot.Series
 
             if (actualContourLevels == null)
             {
-                double max = this.Data[0, 0];
-                double min = this.Data[0, 0];
+                
+                double max = (Data[0, 0] is Double.NaN)? Double.MinValue : Data[0,0];
+                double min = (Data[0, 0] is Double.NaN)? Double.MaxValue : Data[0,0];
                 for (int i = 0; i < this.Data.GetUpperBound(0); i++)
                 {
                     for (int j = 0; j < this.Data.GetUpperBound(1); j++)

@@ -53,46 +53,46 @@ public class Algorithm
 
     public void Calculate()
     {
-        var x_k = new MyTuple(-2.0, -1.0);
-        List.Add(x_k);
-        while (List.Count == 1 || x_k.Path(List[^2]) > 0.01)
+        var xK = new MyTuple(-2, -2.0);
+        List.Add(xK);
+        while (List.Count == 1 || xK.Path(List[^2]) > 0.01)
         {
-            if (Check(x_k.FirstElement, x_k.SecondElement))
+            if (Check(xK.FirstElement, xK.SecondElement))
             {
-                x_k -= _learningRate * Gradient(x_k);
-                List.Add(x_k);
+                xK -= _learningRate * Gradient(xK);
+                List.Add(xK);
             }
             else
             {
-                while (Check(x_k.FirstElement, x_k.SecondElement))
+                while (!Check(xK.FirstElement, xK.SecondElement))
                 {
-                    x_k = x_k.Middle(List[^2]);
+                    xK = xK.Middle(List[^2]);
                 }
-                List[^1] = x_k;
+                List[^1] = xK;
             }
         }
     }
 
     public void Nesterov()
     {
-        var x_k = new MyTuple(-2.0, -1.0);
-        var y_k = new MyTuple(-2.0, -1.0);
-        ListNesterov.Add(x_k);
-        while (ListNesterov.Count == 1 || x_k.Path(ListNesterov[^2]) > 0.01)
+        var xK = new MyTuple(-2.0, -2.0);
+        var yK = new MyTuple(-2.0, -2.0);
+        ListNesterov.Add(xK);
+        while (ListNesterov.Count == 1 || xK.Path(ListNesterov[^2]) > 0.01)
         {
-            if (Check(x_k.FirstElement, x_k.SecondElement))
+            if (Check(xK.FirstElement, xK.SecondElement))
             {
-                x_k = y_k - _learningRate * Gradient(y_k) / Math.Sqrt(ListNesterov.Count);
-                y_k = x_k + _momentum * (x_k - ListNesterov[^1]);
-                ListNesterov.Add(x_k);
+                xK = yK - _learningRate * Gradient(yK) / Math.Sqrt(ListNesterov.Count);
+                yK = xK + _momentum * (xK - ListNesterov[^1]);
+                ListNesterov.Add(xK);
             }
             else
             {
-                while (!Check(x_k.FirstElement, x_k.SecondElement))
+                while (!Check(xK.FirstElement, xK.SecondElement))
                 {
-                    x_k = x_k.Middle(ListNesterov[^2]);
+                    xK = xK.Middle(ListNesterov[^2]);
                 }
-                ListNesterov[^1] = x_k;
+                ListNesterov[^1] = xK;
             }
         }
     }
