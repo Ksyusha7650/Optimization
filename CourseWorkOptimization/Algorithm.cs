@@ -25,13 +25,13 @@ public class Algorithm
             return _alpha * _G * _mu * (Math.Pow(T2 - T1, _N) + Math.Pow(_beta * _A - T1, _N));
         }
 
-        return NaN;
+        return double.NaN;
         /*return _alpha * _G * _mu * (Math.Pow(T2 - T1, _N) + Math.Pow(_beta * _A - T1, _N));*/
     }
 
     private bool Check(double x, double y)
     {
-        return x is >= -3 and <= 3 && y is >= -2 and <= 6 && x - y >= -3;
+        return (x is >= -3 and <= 3) && (y is >= -2 and <= 6) && (x - y >= -3);
     }
 
     private double DerivativeT1(double T1, double T2)

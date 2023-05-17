@@ -48,6 +48,80 @@
           }
         }
       },
+      "OxyPlot.Core/2.1.2": {
+        "runtime": {
+          "lib/netstandard2.0/OxyPlot.dll": {
+            "assemblyVersion": "2.1.2.0",
+            "fileVersion": "2.1.2.0"
+          }
+        }
+      },
+      "OxyPlot.Wpf/2.1.2": {
+        "dependencies": {
+          "OxyPlot.Core": "2.1.2",
+          "OxyPlot.Wpf.Shared": "2.1.2"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/OxyPlot.Wpf.dll": {
+            "assemblyVersion": "2.1.2.0",
+            "fileVersion": "2.1.2.0"
+          }
+        }
+      },
+      "OxyPlot.Wpf.Shared/2.1.2": {
+        "dependencies": {
+          "OxyPlot.Core": "2.1.2"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/OxyPlot.Wpf.Shared.dll": {
+            "assemblyVersion": "2.1.2.0",
+            "fileVersion": "2.1.2.0"
+          }
+        }
+      },
+      "SciChart/7.0.1.27055": {
+        "runtime": {
+          "lib/net6.0-windows7.0/SciChart.Charting.dll": {
+            "assemblyVersion": "7.0.1.27055",
+            "fileVersion": "7.0.1.27055"
+          },
+          "lib/net6.0-windows7.0/SciChart.Core.dll": {
+            "assemblyVersion": "7.0.1.27055",
+            "fileVersion": "7.0.1.27055"
+          },
+          "lib/net6.0-windows7.0/SciChart.Data.dll": {
+            "assemblyVersion": "7.0.1.27055",
+            "fileVersion": "7.0.1.27055"
+          },
+          "lib/net6.0-windows7.0/SciChart.Drawing.dll": {
+            "assemblyVersion": "7.0.1.27055",
+            "fileVersion": "7.0.1.27055"
+          }
+        }
+      },
+      "SciChart.ExternalDependencies/7.0.1.27055": {
+        "dependencies": {
+          "SciChart": "7.0.1.27055",
+          "SciChart3D": "7.0.1.27055"
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/SciChart.Examples.ExternalDependencies.dll": {
+            "assemblyVersion": "7.0.1.27055",
+            "fileVersion": "7.0.1.27055"
+          }
+        }
+      },
+      "SciChart3D/7.0.1.27055": {
+        "dependencies": {
+          "SciChart": "7.0.1.27055"
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/SciChart.Charting3D.dll": {
+            "assemblyVersion": "7.0.1.27055",
+            "fileVersion": "7.0.1.27055"
+          }
+        }
+      },
       "System.Drawing.Common/4.5.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.0.0",
@@ -104,6 +178,48 @@
       "sha512": "sha512-LuI1oG+24TUj1ZRQQjM5Ew73BKnZE5NZ/7eAdh1o8ST5dPhUnJvIkiIn2re3MwnkRy6ELRnvEbBxHP8uALKhJw==",
       "path": "microsoft.win32.systemevents/4.5.0",
       "hashPath": "microsoft.win32.systemevents.4.5.0.nupkg.sha512"
+    },
+    "OxyPlot.Core/2.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/BuPL1Wa7ZhpKA2DBe72md+S8PgIHF+UP/NsKfO9BiheXnbns1/tqS7s2MWIR1xFy5i+PWVC67KziGPY48mNgA==",
+      "path": "oxyplot.core/2.1.2",
+      "hashPath": "oxyplot.core.2.1.2.nupkg.sha512"
+    },
+    "OxyPlot.Wpf/2.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-udX9T1YC5BnnTZkVSNgJqvzXLaBcZDYG32YHWlDELk1UDWQeJi0Z2jBLoIiv4hcW16N4ptYO5cGC3e8m5/z0hw==",
+      "path": "oxyplot.wpf/2.1.2",
+      "hashPath": "oxyplot.wpf.2.1.2.nupkg.sha512"
+    },
+    "OxyPlot.Wpf.Shared/2.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6Cj7UET7AS5gVf77+avKG+PzaKQhTdqRYbyBTCPWW9JEbAsojpNdLICjVXO+5o/HP+DjshZJ6oCFw8eyRnHtCA==",
+      "path": "oxyplot.wpf.shared/2.1.2",
+      "hashPath": "oxyplot.wpf.shared.2.1.2.nupkg.sha512"
+    },
+    "SciChart/7.0.1.27055": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0v6NLT88wj3rcUYGlwT+F9OmVPVrrjnvMIfA//yM39mgPOuVSNvYvJ9X81636LlCF3BAU7NNpZ5+0sWtSkatug==",
+      "path": "scichart/7.0.1.27055",
+      "hashPath": "scichart.7.0.1.27055.nupkg.sha512"
+    },
+    "SciChart.ExternalDependencies/7.0.1.27055": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Z8DIHqlcsU1JH5Zw9BIPxpvsnDfhqpRSBW/Vmj3U01BD/Q29LAhj4m80k5/tH6aaf98WpnT0TI3j8pXrEmIyCw==",
+      "path": "scichart.externaldependencies/7.0.1.27055",
+      "hashPath": "scichart.externaldependencies.7.0.1.27055.nupkg.sha512"
+    },
+    "SciChart3D/7.0.1.27055": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gb905gAqaWpSVH0DOvH0aVH+bAhc3Ii4r/xwQWplhijuCg5NMliHvmUW1B+dYgaeSr3UiwViyLKuZvuTRnEVBw==",
+      "path": "scichart3d/7.0.1.27055",
+      "hashPath": "scichart3d.7.0.1.27055.nupkg.sha512"
     },
     "System.Drawing.Common/4.5.0": {
       "type": "package",

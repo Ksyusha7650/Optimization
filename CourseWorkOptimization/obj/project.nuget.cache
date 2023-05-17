@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "XzVkTQGI+OFmTwe6YnIahctMv2VnY1sSr6f0fy9kkWv8M9HaMlhHjqub+TlPV3Q0g1/ObS0G1f6ZidTryVd/Yg==",
+  "dgSpecHash": "HWbp3nOMGDcGFTJQyy/6PcG8nMB3ok6KOwD1wDliBvSgU7dzWcISVvZB2QFn/XQ1zh6YxLp60cHQNzSR+54ypA==",
   "success": true,
   "projectFilePath": "C:\\Users\\ksysh\\RiderProjects\\CourseWorkOptimization\\CourseWorkOptimization\\CourseWorkOptimization.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,9 @@
     "C:\\Users\\ksysh\\.nuget\\packages\\oxyplot.core\\2.1.2\\oxyplot.core.2.1.2.nupkg.sha512",
     "C:\\Users\\ksysh\\.nuget\\packages\\oxyplot.wpf\\2.1.2\\oxyplot.wpf.2.1.2.nupkg.sha512",
     "C:\\Users\\ksysh\\.nuget\\packages\\oxyplot.wpf.shared\\2.1.2\\oxyplot.wpf.shared.2.1.2.nupkg.sha512",
+    "C:\\Users\\ksysh\\.nuget\\packages\\scichart\\7.0.1.27055\\scichart.7.0.1.27055.nupkg.sha512",
+    "C:\\Users\\ksysh\\.nuget\\packages\\scichart.externaldependencies\\7.0.1.27055\\scichart.externaldependencies.7.0.1.27055.nupkg.sha512",
+    "C:\\Users\\ksysh\\.nuget\\packages\\scichart3d\\7.0.1.27055\\scichart3d.7.0.1.27055.nupkg.sha512",
     "C:\\Users\\ksysh\\.nuget\\packages\\system.drawing.common\\4.5.0\\system.drawing.common.4.5.0.nupkg.sha512"
   ],
   "logs": []

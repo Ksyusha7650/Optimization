@@ -55,6 +55,14 @@
             "OxyPlot.Wpf": {
               "target": "Package",
               "version": "[2.1.2, )"
+            },
+            "SciChart": {
+              "target": "Package",
+              "version": "[7.0.1.27055, )"
+            },
+            "SciChart.ExternalDependencies": {
+              "target": "Package",
+              "version": "[7.0.1.27055, )"
             }
           },
           "imports": [

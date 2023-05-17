@@ -113,6 +113,70 @@
           "Microsoft.WindowsDesktop.App.WPF"
         ]
       },
+      "SciChart/7.0.1.27055": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-windows7.0/SciChart.Charting.dll": {
+            "related": ".xml"
+          },
+          "lib/net6.0-windows7.0/SciChart.Core.dll": {
+            "related": ".xml"
+          },
+          "lib/net6.0-windows7.0/SciChart.Data.dll": {
+            "related": ".xml"
+          },
+          "lib/net6.0-windows7.0/SciChart.Drawing.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/SciChart.Charting.dll": {
+            "related": ".xml"
+          },
+          "lib/net6.0-windows7.0/SciChart.Core.dll": {
+            "related": ".xml"
+          },
+          "lib/net6.0-windows7.0/SciChart.Data.dll": {
+            "related": ".xml"
+          },
+          "lib/net6.0-windows7.0/SciChart.Drawing.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "SciChart.ExternalDependencies/7.0.1.27055": {
+        "type": "package",
+        "dependencies": {
+          "SciChart": "7.0.1.27055",
+          "SciChart3D": "7.0.1.27055"
+        },
+        "compile": {
+          "lib/net6.0-windows7.0/SciChart.Examples.ExternalDependencies.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/SciChart.Examples.ExternalDependencies.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "SciChart3D/7.0.1.27055": {
+        "type": "package",
+        "dependencies": {
+          "SciChart": "7.0.1.27055"
+        },
+        "compile": {
+          "lib/net6.0-windows7.0/SciChart.Charting3D.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/SciChart.Charting3D.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Drawing.Common/4.5.0": {
         "type": "package",
         "dependencies": {
@@ -265,6 +329,80 @@
         "oxyplot.wpf.shared.nuspec"
       ]
     },
+    "SciChart/7.0.1.27055": {
+      "sha512": "0v6NLT88wj3rcUYGlwT+F9OmVPVrrjnvMIfA//yM39mgPOuVSNvYvJ9X81636LlCF3BAU7NNpZ5+0sWtSkatug==",
+      "type": "package",
+      "path": "scichart/7.0.1.27055",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.txt",
+        "images/platform-app-icons_scichart-windows.png",
+        "lib/net462/SciChart.Charting.dll",
+        "lib/net462/SciChart.Charting.xml",
+        "lib/net462/SciChart.Core.dll",
+        "lib/net462/SciChart.Core.xml",
+        "lib/net462/SciChart.Data.dll",
+        "lib/net462/SciChart.Data.xml",
+        "lib/net462/SciChart.Drawing.dll",
+        "lib/net462/SciChart.Drawing.xml",
+        "lib/net6.0-windows7.0/SciChart.Charting.dll",
+        "lib/net6.0-windows7.0/SciChart.Charting.xml",
+        "lib/net6.0-windows7.0/SciChart.Core.dll",
+        "lib/net6.0-windows7.0/SciChart.Core.xml",
+        "lib/net6.0-windows7.0/SciChart.Data.dll",
+        "lib/net6.0-windows7.0/SciChart.Data.xml",
+        "lib/net6.0-windows7.0/SciChart.Drawing.dll",
+        "lib/net6.0-windows7.0/SciChart.Drawing.xml",
+        "lib/netcoreapp3.1/SciChart.Charting.dll",
+        "lib/netcoreapp3.1/SciChart.Charting.xml",
+        "lib/netcoreapp3.1/SciChart.Core.dll",
+        "lib/netcoreapp3.1/SciChart.Core.xml",
+        "lib/netcoreapp3.1/SciChart.Data.dll",
+        "lib/netcoreapp3.1/SciChart.Data.xml",
+        "lib/netcoreapp3.1/SciChart.Drawing.dll",
+        "lib/netcoreapp3.1/SciChart.Drawing.xml",
+        "scichart.7.0.1.27055.nupkg.sha512",
+        "scichart.nuspec"
+      ]
+    },
+    "SciChart.ExternalDependencies/7.0.1.27055": {
+      "sha512": "Z8DIHqlcsU1JH5Zw9BIPxpvsnDfhqpRSBW/Vmj3U01BD/Q29LAhj4m80k5/tH6aaf98WpnT0TI3j8pXrEmIyCw==",
+      "type": "package",
+      "path": "scichart.externaldependencies/7.0.1.27055",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "images/platform-app-icons_scichart-windows.png",
+        "lib/net462/SciChart.Examples.ExternalDependencies.dll",
+        "lib/net462/SciChart.Examples.ExternalDependencies.xml",
+        "lib/net6.0-windows7.0/SciChart.Examples.ExternalDependencies.dll",
+        "lib/net6.0-windows7.0/SciChart.Examples.ExternalDependencies.xml",
+        "lib/netcoreapp3.1/SciChart.Examples.ExternalDependencies.dll",
+        "lib/netcoreapp3.1/SciChart.Examples.ExternalDependencies.xml",
+        "scichart.externaldependencies.7.0.1.27055.nupkg.sha512",
+        "scichart.externaldependencies.nuspec"
+      ]
+    },
+    "SciChart3D/7.0.1.27055": {
+      "sha512": "gb905gAqaWpSVH0DOvH0aVH+bAhc3Ii4r/xwQWplhijuCg5NMliHvmUW1B+dYgaeSr3UiwViyLKuZvuTRnEVBw==",
+      "type": "package",
+      "path": "scichart3d/7.0.1.27055",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.txt",
+        "images/platform-app-icons_scichart-windows.png",
+        "lib/net462/SciChart.Charting3D.dll",
+        "lib/net462/SciChart.Charting3D.xml",
+        "lib/net6.0-windows7.0/SciChart.Charting3D.dll",
+        "lib/net6.0-windows7.0/SciChart.Charting3D.xml",
+        "lib/netcoreapp3.1/SciChart.Charting3D.dll",
+        "lib/netcoreapp3.1/SciChart.Charting3D.xml",
+        "scichart3d.7.0.1.27055.nupkg.sha512",
+        "scichart3d.nuspec"
+      ]
+    },
     "System.Drawing.Common/4.5.0": {
       "sha512": "AiJFxxVPdeITstiRS5aAu8+8Dpf5NawTMoapZ53Gfirml24p7HIfhjmCRxdXnmmf3IUA3AX3CcW7G73CjWxW/Q==",
       "type": "package",
@@ -304,7 +442,9 @@
       "ChartDirector.Net >= 7.0.0",
       "ChartDirector.Net.Desktop.Controls >= 7.0.0",
       "OxyPlot.Core >= 2.1.2",
-      "OxyPlot.Wpf >= 2.1.2"
+      "OxyPlot.Wpf >= 2.1.2",
+      "SciChart >= 7.0.1.27055",
+      "SciChart.ExternalDependencies >= 7.0.1.27055"
     ]
   },
   "packageFolders": {
@@ -361,6 +501,14 @@
           "OxyPlot.Wpf": {
             "target": "Package",
             "version": "[2.1.2, )"
+          },
+          "SciChart": {
+            "target": "Package",
+            "version": "[7.0.1.27055, )"
+          },
+          "SciChart.ExternalDependencies": {
+            "target": "Package",
+            "version": "[7.0.1.27055, )"
           }
         },
         "imports": [

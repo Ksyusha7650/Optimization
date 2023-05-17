@@ -14,15 +14,14 @@ public class Charts
     private readonly WPFChartViewer _viewer3D;
     
     
-    public Charts(WPFChartViewer viewer3D)
+    public Charts(WPFChartViewer viewer3D = null)
     {
-        _viewer3D = viewer3D;
         _algorithm = new Algorithm();
+        /*_viewer3D = viewer3D;
+        
         _viewer3D.MouseMoveChart += WPFChart3D_MouseMoveChart;
         _viewer3D.ViewPortChanged += WPFChart3D_ViewPortChanged;
-        _viewer3D.MouseUp += WPFChart3D_MouseUpChart;
-       
-
+        _viewer3D.MouseUp += WPFChart3D_MouseUpChart;*/
     }
 
     public string GetName()
@@ -54,7 +53,7 @@ public class Charts
                 for (int xIndex = 0; xIndex < dataX.Length; ++xIndex) {
                     double x = dataX[xIndex];
                     //double t = Math.Pow((x - y), 2) + Math.Pow((x + y - 10), 2) / 9;
-             //       dataZ[yIndex * dataX.Length + xIndex] = _algorithm.GetS(x, y);
+                dataZ[yIndex * dataX.Length + xIndex] = _algorithm.GetS(x, y);
                     //dataZ[yIndex * dataX.Length + xIndex] = t;
                 }
             }
@@ -166,7 +165,7 @@ public class Charts
             for (var xIndex = 0; xIndex < dataX.Length; ++xIndex)
             {
                 var x = dataX[xIndex];
-              //  dataZ[yIndex * dataX.Length + xIndex] = _algorithm.GetS(x, y);
+                dataZ[yIndex * dataX.Length + xIndex] = _algorithm.GetS(x, y);
             }
         }
 

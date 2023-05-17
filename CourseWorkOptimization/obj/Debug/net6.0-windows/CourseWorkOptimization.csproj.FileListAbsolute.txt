@@ -33,3 +33,9 @@ C:\Users\ksysh\RiderProjects\CourseWorkOptimization\CourseWorkOptimization\obj\D
 C:\Users\ksysh\RiderProjects\CourseWorkOptimization\CourseWorkOptimization\obj\Debug\net6.0-windows\CourseWorkOptimization_MarkupCompile.lref
 C:\Users\ksysh\RiderProjects\CourseWorkOptimization\CourseWorkOptimization\obj\Debug\net6.0-windows\ChartsWindow.baml
 C:\Users\ksysh\RiderProjects\CourseWorkOptimization\CourseWorkOptimization\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\ksysh\RiderProjects\CourseWorkOptimization\CourseWorkOptimization\bin\Debug\net6.0-windows\SciChart.Charting.dll
+C:\Users\ksysh\RiderProjects\CourseWorkOptimization\CourseWorkOptimization\bin\Debug\net6.0-windows\SciChart.Core.dll
+C:\Users\ksysh\RiderProjects\CourseWorkOptimization\CourseWorkOptimization\bin\Debug\net6.0-windows\SciChart.Data.dll
+C:\Users\ksysh\RiderProjects\CourseWorkOptimization\CourseWorkOptimization\bin\Debug\net6.0-windows\SciChart.Drawing.dll
+C:\Users\ksysh\RiderProjects\CourseWorkOptimization\CourseWorkOptimization\bin\Debug\net6.0-windows\SciChart.Examples.ExternalDependencies.dll
+C:\Users\ksysh\RiderProjects\CourseWorkOptimization\CourseWorkOptimization\bin\Debug\net6.0-windows\SciChart.Charting3D.dll

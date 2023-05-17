@@ -8,7 +8,7 @@
         Title="MainWindow" Height="551" Width="957" Style="{StaticResource MyWindowStyle}">
     <Grid>
         <chartDirector:WPFChartViewer x:Name="Chart" Margin="466,28,35,69" />
-        <chartDirector:WPFChartViewer x:Name="Chart3D" Margin="466,28,35,69"/>
+        <!--<chartDirector:WPFChartViewer x:Name="Chart3D" Margin="466,28,35,69"/>-->
         <Label Style="{StaticResource Title}" Content="Математическая модель:" HorizontalAlignment="Left"
                Margin="27,18,0,0" VerticalAlignment="Top" />
         <Image Source="/Image1.png" MinHeight="35" MinWidth="339" Height="35" Width="339" Margin="38,47,580,440"

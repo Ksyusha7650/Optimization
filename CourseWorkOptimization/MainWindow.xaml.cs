@@ -12,9 +12,9 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-        _charts = new Charts(Chart3D);
+        _charts = new Charts();
         _charts.CreateChart(Chart);
-        _charts.createChart(Chart3D);
+        /*_charts.createChart(Chart3D);*/
     }
 
     private void T1TextBox_TextChanged(object sender, TextChangedEventArgs e)
