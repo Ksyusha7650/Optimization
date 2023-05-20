@@ -16,7 +16,7 @@ public class Charts
     
     public Charts(WPFChartViewer viewer3D = null)
     {
-        _algorithm = new Algorithm();
+        //_algorithm = new Algorithm();
         /*_viewer3D = viewer3D;
         
         _viewer3D.MouseMoveChart += WPFChart3D_MouseMoveChart;

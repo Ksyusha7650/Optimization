@@ -8,16 +8,18 @@ namespace CourseWorkOptimization;
 /// </summary>
 public partial class MainWindow : Window
 {
-    private Charts _charts;
     public MainWindow()
     {
         InitializeComponent();
-        _charts = new Charts();
-        _charts.CreateChart(Chart);
-        /*_charts.createChart(Chart3D);*/
     }
-
-    private void T1TextBox_TextChanged(object sender, TextChangedEventArgs e)
+    
+    private void CreateChart(object sender, RoutedEventArgs e)
     {
+        var is2DChart = (sender as Button)?.Name == "Create2DChartButton";
+        if (is2DChart)
+        {
+            new ChartsWindow().Show();
+        }
     }
+           
 }

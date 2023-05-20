@@ -16,7 +16,7 @@ public class Algorithm
     private readonly double _mu = 1;
     private readonly int _N = 2;
     public List<MyTuple> List = new(), ListNesterov = new();
-    private double _learningRate = 0.01, _momentum = 0.9;
+    private double _learningRate = 0.01, _momentum = 0.8;
 
     public double GetS(double T1, double T2)
     {
@@ -53,32 +53,34 @@ public class Algorithm
 
     public void Calculate()
     {
-        var xK = new MyTuple(-2, -2.0);
-        List.Add(xK);
-        while (List.Count == 1 || xK.Path(List[^2]) > 0.01)
+        var xK = new MyTuple(-3.0, -2.0);
+        var path = (List.Count >= 2)? xK.Path(List[^2]): 1;
+        while (path > 0.01)
         {
             if (Check(xK.FirstElement, xK.SecondElement))
             {
-                xK -= _learningRate * Gradient(xK);
                 List.Add(xK);
+                xK -= _learningRate * Gradient(xK);
             }
             else
             {
                 while (!Check(xK.FirstElement, xK.SecondElement))
                 {
-                    xK = xK.Middle(List[^2]);
+                    xK = xK.Middle(List[^1]);
                 }
-                List[^1] = xK;
+                List.Add(xK);
             }
+            path = List.Count >= 2? xK.Path(List[^2]): 1;
         }
     }
 
     public void Nesterov()
     {
-        var xK = new MyTuple(-2.0, -2.0);
+        var xK = new MyTuple(-3.0, -2.0);
         var yK = new MyTuple(-2.0, -2.0);
         ListNesterov.Add(xK);
-        while (ListNesterov.Count == 1 || xK.Path(ListNesterov[^2]) > 0.01)
+        var path = (ListNesterov.Count >= 2)? xK.Path(ListNesterov[^2]): 1;
+        while (path > 0.01)
         {
             if (Check(xK.FirstElement, xK.SecondElement))
             {
@@ -92,8 +94,9 @@ public class Algorithm
                 {
                     xK = xK.Middle(ListNesterov[^2]);
                 }
-                ListNesterov[^1] = xK;
+                ListNesterov.Add(xK);;
             }
+            path = (ListNesterov.Count >= 2)? xK.Path(ListNesterov[^2]): 1;
         }
     }
     
