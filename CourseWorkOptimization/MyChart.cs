@@ -13,7 +13,7 @@ public class MyChart
     public MyChart()
     {
         _algorithm = new Algorithm();
-        MyModel = new PlotModel { Title = "ContourSeries" };
+        MyModel = new PlotModel { Title = "2D график" };
        MyModel.Axes.Add(new LinearColorAxis
        {
            Position = AxisPosition.Right,
@@ -25,8 +25,7 @@ public class MyChart
         double x1 = 3;
         double y0 = -2;
         double y1 = 6;
-//generate values
-double Peaks(double x, double y) => _algorithm.GetS(x, y);
+        double Peaks(double x, double y) => _algorithm.GetS(x, y);
 
         var xx = ArrayBuilder.CreateVector(x0, x1, 0.1);
         var yy = ArrayBuilder.CreateVector(y0, y1, 0.1);
@@ -64,7 +63,7 @@ double Peaks(double x, double y) => _algorithm.GetS(x, y);
         _algorithm.ListNesterov.ForEach(x =>
             line2.Points.Add(
                 new DataPoint(x.FirstElement, x.SecondElement)));
-        //MyModel.Series.Add(line2);
+        MyModel.Series.Add(line2);
         
     }
     public PlotModel MyModel { get; private set; }

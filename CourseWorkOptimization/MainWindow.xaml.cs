@@ -21,5 +21,11 @@ public partial class MainWindow : Window
             new ChartsWindow().Show();
         }
     }
-           
+
+    private void Exit(object sender, RoutedEventArgs e)
+    {
+        Hide();
+        new EnterWindow().Show();
+        Close();
+    }
 }

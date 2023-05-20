@@ -7,7 +7,7 @@
         xmlns:wpf="http://oxyplot.org/wpf"
          xmlns:local="clr-namespace:CourseWorkOptimization"
         mc:Ignorable="d"
-        Title="MainWindow" Height="294" Width="398" Style="{StaticResource MyWindowStyle}">
+        Title="MainWindow" Height="294" Width="398" WindowStartupLocation="CenterScreen" Style="{StaticResource MyWindowStyle}">
     <Grid>
         <Label Style="{StaticResource Title}" Content="Математическая модель:" HorizontalAlignment="Left"
                Margin="19,30,0,0" VerticalAlignment="Top" />
@@ -22,7 +22,7 @@
                 <Button x:Name="Create3DChartButton" Content="3D график" Click="CreateChart"></Button>
             </MenuItem>
             <Button Content="О моделе" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Button Content="Выйти" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button Content="Выйти" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Exit"/>
         </Menu>
         <Image Source="/Image1.png" MinHeight="35" MinWidth="339" Width="339" Margin="19,62,40,171"
              ClipToBounds="True" SnapsToDevicePixels="True"

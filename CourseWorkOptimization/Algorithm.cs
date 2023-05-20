@@ -26,7 +26,6 @@ public class Algorithm
         }
 
         return double.NaN;
-        /*return _alpha * _G * _mu * (Math.Pow(T2 - T1, _N) + Math.Pow(_beta * _A - T1, _N));*/
     }
 
     private bool Check(double x, double y)
@@ -53,7 +52,7 @@ public class Algorithm
 
     public void Calculate()
     {
-        var xK = new MyTuple(-3.0, -2.0);
+        var xK = new MyTuple(-3.0, -1.8);
         var path = (List.Count >= 2)? xK.Path(List[^2]): 1;
         while (path > 0.01)
         {
@@ -76,8 +75,8 @@ public class Algorithm
 
     public void Nesterov()
     {
-        var xK = new MyTuple(-3.0, -2.0);
-        var yK = new MyTuple(-2.0, -2.0);
+        var xK = new MyTuple(-3.0, -1.8);
+        var yK = new MyTuple(-1.8, -1.8);
         ListNesterov.Add(xK);
         var path = (ListNesterov.Count >= 2)? xK.Path(ListNesterov[^2]): 1;
         while (path > 0.01)
