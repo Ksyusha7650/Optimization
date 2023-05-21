@@ -3,6 +3,7 @@ using System.Linq;
 using ChartDirector;
 using OxyPlot;
 using OxyPlot.Axes;
+using OxyPlot.Legends;
 using OxyPlot.Series;
 
 namespace CourseWorkOptimization;
@@ -13,7 +14,11 @@ public class MyChart
     public MyChart()
     {
         _algorithm = new Algorithm();
-        MyModel = new PlotModel { Title = "2D график" };
+        MyModel = new PlotModel
+        {
+            Title = "2D график",
+            IsLegendVisible = true
+        };
        MyModel.Axes.Add(new LinearColorAxis
        {
            Position = AxisPosition.Right,
@@ -21,7 +26,8 @@ public class MyChart
            HighColor = OxyColors.Gray,
            LowColor = OxyColors.Black
        });
-        double x0 = -3;
+
+       double x0 = -3;
         double x1 = 3;
         double y0 = -2;
         double y1 = 6;
@@ -32,6 +38,7 @@ public class MyChart
         var peaksData = ArrayBuilder.Evaluate(Peaks, xx, yy);
         var hms = new HeatMapSeries { X0 = x0, X1 = x1, Y0 = y0, Y1 = y1, Data = peaksData };
         MyModel.Series.Add(hms);
+        
         var cs = new ContourSeries
         {
             StrokeThickness = 1,
@@ -49,6 +56,9 @@ public class MyChart
         {
             StrokeThickness = 1,
             Color = OxyColors.Cyan,
+            Title = "Метод градиентного спуска",
+            TextColor = OxyColors.Cyan,
+            FontSize = 15
         };
         _algorithm.List.ForEach(x=>
         line.Points.Add(
@@ -58,13 +68,16 @@ public class MyChart
         {
             StrokeThickness = 1,
             Color = OxyColors.Gold,
+            Title = "Метод Нестерова",
+            TextColor = OxyColors.Gold
             
         };
         _algorithm.ListNesterov.ForEach(x =>
             line2.Points.Add(
                 new DataPoint(x.FirstElement, x.SecondElement)));
         MyModel.Series.Add(line2);
-        
+       
+
     }
     public PlotModel MyModel { get; private set; }
 }
