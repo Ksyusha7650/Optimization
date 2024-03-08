@@ -39,3 +39,10 @@ C:\Users\ksysh\RiderProjects\CourseWorkOptimization\CourseWorkOptimization\bin\D
 C:\Users\ksysh\RiderProjects\CourseWorkOptimization\CourseWorkOptimization\bin\Debug\net6.0-windows\SciChart.Drawing.dll
 C:\Users\ksysh\RiderProjects\CourseWorkOptimization\CourseWorkOptimization\bin\Debug\net6.0-windows\SciChart.Examples.ExternalDependencies.dll
 C:\Users\ksysh\RiderProjects\CourseWorkOptimization\CourseWorkOptimization\bin\Debug\net6.0-windows\SciChart.Charting3D.dll
+C:\Users\ksysh\RiderProjects\CourseWorkOptimization\CourseWorkOptimization\obj\Debug\net6.0-windows\ChartsWindow3D.g.cs
+C:\Users\ksysh\RiderProjects\CourseWorkOptimization\CourseWorkOptimization\obj\Debug\net6.0-windows\ChartsWindow3D.baml
+C:\Users\ksysh\RiderProjects\CourseWorkOptimization\CourseWorkOptimization\obj\Debug\net6.0-windows\AdminWindow.baml
+C:\Users\ksysh\RiderProjects\CourseWorkOptimization\CourseWorkOptimization\obj\Debug\net6.0-windows\AdminWindow.g.cs
+C:\Users\ksysh\RiderProjects\CourseWorkOptimization\CourseWorkOptimization\obj\Debug\net6.0-windows\TableWindow.g.cs
+C:\Users\ksysh\RiderProjects\CourseWorkOptimization\CourseWorkOptimization\obj\Debug\net6.0-windows\TableWindow.baml
+C:\Users\ksysh\RiderProjects\CourseWorkOptimization\CourseWorkOptimization\obj\Debug\net6.0-windows\CourseWorkOptimization.sourcelink.json

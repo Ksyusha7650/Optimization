@@ -5,12 +5,24 @@
     <Compile Update="EnterWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="TableWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="ChartsWindow3D.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AdminWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="EnterWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Resources\Style.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="TableWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

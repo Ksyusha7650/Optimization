@@ -52,7 +52,7 @@ public partial class EnterWindow : Window
                 return;
             case Enter.Admin when PasswordBox.Password == _password:
                 Hide();
-                new MainWindow().Show();
+                new AdminWindow().Show();
                 Close();
                 break;
             case Enter.Admin:

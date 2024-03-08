@@ -35,12 +35,12 @@ public class Algorithm
 
     private double DerivativeT1(double T1, double T2)
     {
-        return -_N * _alpha * _G * _mu * (Math.Pow(T2 - T1, _N - 1) + Math.Pow(_beta * _A - T1, _N - 1));
+        return _N * _alpha * _G * _mu * (Math.Pow(T2 - T1, _N - 1) + Math.Pow(_beta * _A - T1, _N - 1));
     }
     
     private double DerivativeT2(double T1, double T2)
     {
-        return _N * _alpha * _G * _mu * Math.Pow(T2 - T1, _N - 1);
+        return -_N * _alpha * _G * _mu * Math.Pow(T2 - T1, _N - 1);
     }
 
     private MyTuple Gradient(MyTuple pair)
@@ -52,7 +52,8 @@ public class Algorithm
 
     public void Calculate()
     {
-        var xK = new MyTuple(-3.0, -1.8);
+        var xK = new MyTuple(0.7, 0.5);
+        _learningRate = MainWindow.alpha;
         var path = (List.Count >= 2)? xK.Path(List[^2]): 1;
         while (path > 0.01)
         {
@@ -75,17 +76,17 @@ public class Algorithm
 
     public void Nesterov()
     {
-        var xK = new MyTuple(-3.0, -1.8);
-        var yK = new MyTuple(-1.8, -1.8);
-        ListNesterov.Add(xK);
+        var xK = new MyTuple(0.7, 0.5);
+        var yK = new MyTuple(1.0, 0.0);
+        _learningRate = MainWindow.alpha;
         var path = (ListNesterov.Count >= 2)? xK.Path(ListNesterov[^2]): 1;
         while (path > 0.01)
         {
             if (Check(xK.FirstElement, xK.SecondElement))
             {
+                ListNesterov.Add(xK);
                 xK = yK - _learningRate * Gradient(yK) / Math.Sqrt(ListNesterov.Count);
                 yK = xK + _momentum * (xK - ListNesterov[^1]);
-                ListNesterov.Add(xK);
             }
             else
             {
@@ -93,9 +94,9 @@ public class Algorithm
                 {
                     xK = xK.Middle(ListNesterov[^2]);
                 }
-                ListNesterov.Add(xK);;
             }
             path = (ListNesterov.Count >= 2)? xK.Path(ListNesterov[^2]): 1;
+        
         }
     }
     

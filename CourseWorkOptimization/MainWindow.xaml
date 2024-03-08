@@ -7,26 +7,19 @@
         xmlns:wpf="http://oxyplot.org/wpf"
          xmlns:local="clr-namespace:CourseWorkOptimization"
         mc:Ignorable="d"
-        Title="MainWindow" Height="294" Width="398" WindowStartupLocation="CenterScreen" Style="{StaticResource MyWindowStyle}">
+        Title="Главное окно" Height="344" Width="398" WindowStartupLocation="CenterScreen" Style="{StaticResource MyWindowStyle}">
     <Grid>
         <Label Style="{StaticResource Title}" Content="Математическая модель:" HorizontalAlignment="Left"
                Margin="19,30,0,0" VerticalAlignment="Top" />
-        <Label Content="Входные параметры:" HorizontalAlignment="Left" Margin="15,105,0,0" VerticalAlignment="Top" />
-        <Label Content="alpha:" HorizontalAlignment="Left" Margin="25,134,0,0" VerticalAlignment="Top"
-               ToolTip="Расход реакционной массы" Width="52" />
-        <TextBox x:Name="GTextBox" HorizontalAlignment="Left" Margin="77,138,0,0" TextWrapping="Wrap" Text="2"
-                 VerticalAlignment="Top" Width="74" />
         <Menu Height="28" VerticalAlignment="Top">
             <MenuItem Cursor="Hand" Header="Построить графики">
                 <Button x:Name="Create2DChartButton" Content="2D график" Click="CreateChart"></Button>
                 <Button x:Name="Create3DChartButton" Content="3D график" Click="CreateChart"></Button>
             </MenuItem>
-            <Button Content="О моделе" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Button Content="Выйти" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Exit"/>
         </Menu>
-        <Image Source="/Image1.png" MinHeight="35" MinWidth="339" Width="339" Margin="19,62,40,171"
-             ClipToBounds="True" SnapsToDevicePixels="True"
-            StretchDirection="DownOnly" />
-
+        <TextBox x:Name="AlphaTextBox" HorizontalAlignment="Left" Margin="247,300,0,0" TextWrapping="Wrap" Text="0.01" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Коэффициент пропорциональности:" HorizontalAlignment="Left" Margin="19,296,0,0" VerticalAlignment="Top"/>
+        <Image Margin="31,67,112,51" Source="/Image5.png" Stretch="Fill"/>
     </Grid>
 </Window>

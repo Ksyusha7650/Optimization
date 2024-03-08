@@ -6,12 +6,13 @@
         xmlns:local="clr-namespace:CourseWorkOptimization"
         xmlns:wpf="http://oxyplot.org/wpf"
         mc:Ignorable="d"
-        Title="ChartsWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" Topmost="True">
+        Title="ChartsWindow" Height="496" Width="800" WindowStartupLocation="CenterScreen" Topmost="True">
     <Window.DataContext>
         <local:MyChart/>
     </Window.DataContext>
     <Grid>
-        <wpf:PlotView Model="{Binding MyModel}"/>
+        <wpf:PlotView Model="{Binding MyModel}" Margin="10,36,42,90"/>
+        <Label x:Name="ResultLabel" Content="{Binding ResultText}" HorizontalAlignment="Left" Margin="353,390,0,0" VerticalAlignment="Top" Width="405" Height="67"/>
     </Grid>
 
 </Window>

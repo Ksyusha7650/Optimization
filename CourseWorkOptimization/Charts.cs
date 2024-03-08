@@ -16,12 +16,12 @@ public class Charts
     
     public Charts(WPFChartViewer viewer3D = null)
     {
-        //_algorithm = new Algorithm();
-        /*_viewer3D = viewer3D;
+        _algorithm = new Algorithm();
+        _viewer3D = viewer3D;
         
         _viewer3D.MouseMoveChart += WPFChart3D_MouseMoveChart;
         _viewer3D.ViewPortChanged += WPFChart3D_ViewPortChanged;
-        _viewer3D.MouseUp += WPFChart3D_MouseUpChart;*/
+        _viewer3D.MouseUp += WPFChart3D_MouseUpChart;
     }
 
     public string GetName()
@@ -83,9 +83,9 @@ public class Charts
             c.setColorAxis(650, 270, Chart.Left, 200, Chart.Right);
 
             // Set the x, y and z axis titles using 10 points Arial Bold font
-            c.xAxis().setTitle("X", "Arial Bold", 15);
-            c.yAxis().setTitle("Y", "Arial Bold", 15);
-
+            c.xAxis().setTitle("T1", "Arial Bold", 15);
+            c.yAxis().setTitle("T2", "Arial Bold", 15);
+            c.zAxis().setTitle("Прибыль от реализации целевого компонента", "Arial Bold", 15);
             // Set axis label font
             c.xAxis().setLabelStyle("Arial Bold", 10);
             c.yAxis().setLabelStyle("Arial Bold", 10);
