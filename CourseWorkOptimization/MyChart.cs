@@ -12,13 +12,14 @@ namespace CourseWorkOptimization;
 public class MyChart
 {
     private Algorithm _algorithm;
-    private List<Calculation> calculations, calculations2;
+    private List<Calculation> calculations, calculations2, calculationsBox;
 
     public MyChart()
     {
         _algorithm = new Algorithm();
         calculations = new();
         calculations2 = new();
+        calculationsBox = new();
         MyModel = new PlotModel
         {
             Title = "2D график",
@@ -103,7 +104,34 @@ public class MyChart
             MyModel.Series.Add(line2);
             
         }
-        new TableWindow(calculations, calculations2).Show();
+
+        if (MainWindow.isBox)
+        {
+           
+            var box = new Box();
+            var points = box.BoxAlgorithm();
+            var line3 = new LineSeries
+            {
+                StrokeThickness = 1,
+                Color = OxyColors.Black,
+                Title = "Метод Бокса",
+                TextColor = OxyColors.Black
+
+            };
+            points.ForEach(x => {
+                var t1 = Math.Round(x.X1, 2);
+                var t2 = Math.Round(x.X2, 2);
+                line3.Points.Add(
+                    new DataPoint(t1, t2));
+                calculationsBox.Add(
+                    new Calculation(t1, t2, Math.Round(Peaks(t1, t2), 2)));
+            });
+            var res = points.Last();
+            var result = new MyTuple(res.X1, res.X2);
+            SetLabel(line3.Title, result, Math.Round(Peaks(res.X1, res.X2), 2));
+            MyModel.Series.Add(line3);
+        }
+        new TableWindow(calculations, calculations2, calculationsBox).Show();
 
     }
     public PlotModel MyModel { get; private set; }

@@ -10,7 +10,7 @@ namespace CourseWorkOptimization;
 /// </summary>
 public partial class MainWindow : Window
 {
-    public static bool isFirstUsed, isSecondUsed;
+    public static bool isFirstUsed, isSecondUsed, isBox;
     public static double alpha;
     public MainWindow()
     {
@@ -22,6 +22,7 @@ public partial class MainWindow : Window
         admin.ReadFromFile();
         MainWindow.isFirstUsed = admin.isFirstUsed;
         MainWindow.isSecondUsed = admin.isSecondUsed;
+        MainWindow.isBox = admin.isBoxUsed;
     }
     
     private void CreateChart(object sender, RoutedEventArgs e)
@@ -29,7 +30,7 @@ public partial class MainWindow : Window
         var is2DChart = (sender as Button)?.Name == "Create2DChartButton";
         if (is2DChart)
         {
-            if (double.TryParse(AlphaTextBox.Text, out alpha) && (alpha < 1 && alpha > 0))
+            if (double.TryParse(AlphaTextBox.Text, out alpha) && alpha is < 1 and > 0)
                 new ChartsWindow().Show();
             else MessageBox.Show("Коэффициент пропорциональности не в правильном формате!");
         }

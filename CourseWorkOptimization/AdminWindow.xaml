@@ -1,0 +1,24 @@
+﻿<Window x:Class="CourseWorkOptimization.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Администратор" Height="303" Width="407" WindowStartupLocation="CenterScreen"
+        Style="{StaticResource MyWindowStyle}">
+    <Grid Margin="0,0,0,-6">
+        <Label Style="{StaticResource Title}" Content="Используемые методы:" HorizontalAlignment="Left" Margin="10,10,0,0"
+               VerticalAlignment="Top" />
+        <Button x:Name="EnterButton" Content="ОК" HorizontalAlignment="Left" Margin="333,222,0,0"
+                VerticalAlignment="Top" Width="42" Click="Send"/>
+        <StackPanel x:Name="MethodsStackPanel" Margin="10,44,10,93">
+        </StackPanel>
+        <Button x:Name="AddButton" Content="Добавить" HorizontalAlignment="Center" Margin="0,204,0,0" VerticalAlignment="Top" Click="Add" IsEnabled="False"/>
+        <TextBox x:Name="MethodTextBox" HorizontalAlignment="Left" Margin="10,206,0,0" TextWrapping="Wrap" Text="Новый метод" VerticalAlignment="Top" Width="120" TextChanged="MethodTextBox_TextChanged"/>
+        <CheckBox x:Name="IsUsedCheckBox" Content="" HorizontalAlignment="Left" Margin="144,206,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="MethodsComboBox" HorizontalAlignment="Left" Margin="10,231,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="MethodsComboBox_SelectionChanged"/>
+        <Button x:Name="DeleteButton" Content="Удалить" HorizontalAlignment="Left" Margin="142,233,0,0" VerticalAlignment="Top" Click="DeleteButton_Click" IsEnabled="False"/>
+
+
+    </Grid>
+</Window>
