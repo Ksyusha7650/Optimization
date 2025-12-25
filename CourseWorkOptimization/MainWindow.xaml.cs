@@ -10,7 +10,7 @@ namespace CourseWorkOptimization;
 /// </summary>
 public partial class MainWindow : Window
 {
-    public static bool isFirstUsed, isSecondUsed, isBox;
+    public static bool isFirstUsed, isSecondUsed, isBox, isGenetic;
     public static double alpha;
     public MainWindow()
     {
@@ -23,6 +23,7 @@ public partial class MainWindow : Window
         MainWindow.isFirstUsed = admin.isFirstUsed;
         MainWindow.isSecondUsed = admin.isSecondUsed;
         MainWindow.isBox = admin.isBoxUsed;
+        MainWindow.isGenetic = admin.isGeneticUsed;
     }
     
     private void CreateChart(object sender, RoutedEventArgs e)

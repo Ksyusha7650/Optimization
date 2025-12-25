@@ -66,13 +66,11 @@ namespace CourseWorkOptimization;
             N = 2;
             MaxIterations = 20;
             MinEpsilon = 0.01;
-            IsMin = false;
-
         }
         
         private bool Check(double x, double y)
         {
-            return (x is >= -3 and <= 3) && (y is >= -2 and <= 6) && (x - y >= -3);
+            return (x is >= -3 and <= 3) && (y is >= -2 and <= 6) && (x + 0.5 * y <= 1);
         }
         public List<Point> RandomSearch() {
             /*List<int> test = new List<int>();
@@ -322,7 +320,7 @@ namespace CourseWorkOptimization;
 			X2 = 1 / 2.0 * (X2 + bestVertex.X2);
 		}
         private bool PointCheckSecondLimits(double x1, double x2) {
-            if (x2 - x1 > ThirdLimit) {
+            if (x1 + 0.5 * x2 > 1) {
                 return false;
             }
             else {

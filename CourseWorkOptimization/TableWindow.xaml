@@ -10,8 +10,10 @@
         <DataGrid x:Name="CalculationsDataGrid" Margin="0,40,309,0"/>
         <DataGrid x:Name="Calculations2DataGrid" Margin="307,40,0,0"/>
         <DataGrid x:Name="Calculations3DataGrid" Margin="600,40,0,0"/>
+        <DataGrid x:Name="Calculations4DataGrid" Margin="0,40,0,0" HorizontalAlignment="Right" Width="300"/>
         <Label Content="Метод градиентного спуска" HorizontalAlignment="Left" Margin="69,9,0,0" VerticalAlignment="Top"/>
         <Label Content="Метод Нестерова" HorizontalAlignment="Left" Margin="406,9,0,0" VerticalAlignment="Top"/>
         <Label Content="Метод Бокса" HorizontalAlignment="Left" Margin="725,9,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LabelGenetic" Content="Генетический алгоритм" HorizontalAlignment="Right" Margin="0,9,50,0" VerticalAlignment="Top" Visibility="Collapsed"/>
     </Grid>
 </Window>

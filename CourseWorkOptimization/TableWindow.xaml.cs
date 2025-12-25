@@ -19,12 +19,17 @@ namespace CourseWorkOptimization
     /// </summary>
     public partial class TableWindow : Window
     {
-        public TableWindow(List<Calculation> calculations, List<Calculation> calculations2, List<Calculation> calculationsBox)
+        public TableWindow(List<Calculation> calculations, List<Calculation> calculations2, List<Calculation> calculationsBox, List<Calculation> calculationsGenetic = null)
         {
             InitializeComponent();
             SetTable(calculations, CalculationsDataGrid);
             SetTable(calculations2, Calculations2DataGrid);
             SetTable(calculationsBox, Calculations3DataGrid);
+            if (calculationsGenetic != null && calculationsGenetic.Count > 0)
+            {
+                SetTable(calculationsGenetic, Calculations4DataGrid);
+                LabelGenetic.Visibility = Visibility.Visible;
+            }
         }
 
         private void SetTable(List<Calculation> calculations, DataGrid table)

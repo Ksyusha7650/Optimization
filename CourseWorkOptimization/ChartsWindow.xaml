@@ -6,13 +6,38 @@
         xmlns:local="clr-namespace:CourseWorkOptimization"
         xmlns:wpf="http://oxyplot.org/wpf"
         mc:Ignorable="d"
-        Title="ChartsWindow" Height="496" Width="800" WindowStartupLocation="CenterScreen" Topmost="True">
+        Title="ChartsWindow" Height="600" Width="900" WindowStartupLocation="CenterScreen" Topmost="True">
     <Window.DataContext>
         <local:MyChart/>
     </Window.DataContext>
     <Grid>
-        <wpf:PlotView Model="{Binding MyModel}" Margin="10,36,42,90"/>
-        <Label x:Name="ResultLabel" Content="{Binding ResultText}" HorizontalAlignment="Left" Margin="353,390,0,0" VerticalAlignment="Top" Width="405" Height="67"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- Чекбоксы методов -->
+        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0" Margin="10,10,10,5" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Label Content="Отображаемые методы:" FontWeight="Bold" Margin="0,0,0,5"/>
+            <CheckBox x:Name="CheckBoxGradient" Content="Метод градиентного спуска" IsChecked="True" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Margin="0,2"/>
+            <CheckBox x:Name="CheckBoxNesterov" Content="Метод Нестерова" IsChecked="True" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Margin="0,2"/>
+            <CheckBox x:Name="CheckBoxBox" Content="Метод Бокса" IsChecked="True" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Margin="0,2"/>
+            <CheckBox x:Name="CheckBoxGenetic" Content="Генетический алгоритм" IsChecked="True" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Margin="0,2"/>
+        </StackPanel>
+        
+        <!-- График -->
+        <wpf:PlotView Model="{Binding MyModel}" Grid.Row="0" Grid.Column="1" Margin="10,10,10,5"/>
+        
+        <!-- Результаты -->
+        <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Background="White" BorderBrush="LightGray" BorderThickness="1" Margin="10,5,10,10">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" MaxHeight="120">
+                <TextBlock Text="{Binding ResultText}" Margin="5" TextWrapping="Wrap" FontSize="12"/>
+            </ScrollViewer>
+        </Border>
     </Grid>
 
 </Window>

@@ -12,6 +12,10 @@ public class Charts
 {
     private readonly Algorithm _algorithm;
     private readonly WPFChartViewer _viewer3D;
+    public bool ShowGradient = true;
+    public bool ShowNesterov = true;
+    public bool ShowBox = true;
+    public bool ShowGenetic = true;
     
     
     public Charts(WPFChartViewer viewer3D = null)
@@ -19,9 +23,12 @@ public class Charts
         _algorithm = new Algorithm();
         _viewer3D = viewer3D;
         
-        _viewer3D.MouseMoveChart += WPFChart3D_MouseMoveChart;
-        _viewer3D.ViewPortChanged += WPFChart3D_ViewPortChanged;
-        _viewer3D.MouseUp += WPFChart3D_MouseUpChart;
+        if (_viewer3D != null)
+        {
+            _viewer3D.MouseMoveChart += WPFChart3D_MouseMoveChart;
+            _viewer3D.ViewPortChanged += WPFChart3D_ViewPortChanged;
+            _viewer3D.MouseUp += WPFChart3D_MouseUpChart;
+        }
     }
 
     public string GetName()
@@ -39,6 +46,8 @@ public class Charts
     //Note: the argument chartIndex is unused because this demo only has 1 chart.
     public void createChart(WPFChartViewer viewer)
     {
+        if (viewer == null || _algorithm == null) return;
+        
         double[] dataX =
         {
             -3, -2, -1, 0, 1, 2, 3
@@ -92,6 +101,11 @@ public class Charts
             c.zAxis().setLabelStyle("Arial Bold", 10);
             c.colorAxis().setLabelStyle("Arial Bold", 10);
             
+            // Примечание: SurfaceChart в ChartDirector не поддерживает добавление дополнительных слоев
+            // с траекториями методов. Траектории можно визуализировать только на 2D графике.
+            // Здесь мы просто вычисляем методы для использования чекбоксов (если понадобится в будущем)
+            // Вычисляем методы оптимизации только если нужно (для совместимости с чекбоксами)
+            // На 3D графике отображается только поверхность функции
 
             // Output the chart
             viewer.Chart = c;
@@ -112,6 +126,8 @@ public class Charts
 
     private void WPFChart3D_MouseMoveChart(object sender, MouseEventArgs e)
     {
+        if (_viewer3D == null) return;
+        
         _viewer3D.updateViewPort(true, false);
         int mouseX = _viewer3D.ChartMouseX;
         int mouseY = _viewer3D.ChartMouseY;
@@ -136,13 +152,14 @@ public class Charts
          
     private void WPFChart3D_ViewPortChanged(object sender, WPFViewPortEventArgs e)
     {
-        if (e.NeedUpdateChart)
-            createChart((WPFChartViewer)sender);
+        if (e.NeedUpdateChart && sender is WPFChartViewer viewer)
+            createChart(viewer);
     }
     private void WPFChart3D_MouseUpChart(object sender, MouseEventArgs e)
     {
         m_isDragging = false;
-        _viewer3D.updateViewPort(true, false);
+        if (_viewer3D != null)
+            _viewer3D.updateViewPort(true, false);
     }
     public void CreateChart(WPFChartViewer viewer)
     {

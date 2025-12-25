@@ -15,7 +15,7 @@ namespace CourseWorkOptimization;
 /// </summary>
 public partial class AdminWindow : Window
 {
-    public bool isFirstUsed, isSecondUsed, isBoxUsed;
+    public bool isFirstUsed, isSecondUsed, isBoxUsed, isGeneticUsed;
     public AdminWindow()
     {
         InitializeComponent();
@@ -39,17 +39,22 @@ public partial class AdminWindow : Window
                 Content = text,
                 IsChecked = isUsed
             };
-            switch (count)
+            // Маппинг методов по названию
+            if (text == "Метод градиентного спуска")
             {
-                case 0:
-                    isFirstUsed = isUsed;
-                    break;
-                case 1:
-                    isSecondUsed = isUsed;
-                    break;
-                case 2:
-                    isBoxUsed = isUsed;
-                    break;
+                isFirstUsed = isUsed;
+            }
+            else if (text == "Метод Нестерова")
+            {
+                isSecondUsed = isUsed;
+            }
+            else if (text == "Бокс")
+            {
+                isBoxUsed = isUsed;
+            }
+            else if (text == "Генетический алгоритм")
+            {
+                isGeneticUsed = isUsed;
             }
 
             count++;

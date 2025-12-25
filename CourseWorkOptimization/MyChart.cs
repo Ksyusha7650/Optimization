@@ -12,7 +12,8 @@ namespace CourseWorkOptimization;
 public class MyChart
 {
     private Algorithm _algorithm;
-    private List<Calculation> calculations, calculations2, calculationsBox;
+    private List<Calculation> calculations, calculations2, calculationsBox, calculationsGenetic;
+    public LineSeries LineGradient, LineNesterov, LineBox, LineGenetic;
 
     public MyChart()
     {
@@ -20,6 +21,7 @@ public class MyChart
         calculations = new();
         calculations2 = new();
         calculationsBox = new();
+        calculationsGenetic = new();
         MyModel = new PlotModel
         {
             Title = "2D график",
@@ -60,7 +62,7 @@ public class MyChart
         if (MainWindow.isFirstUsed)
         {
             _algorithm.Calculate();
-            var line = new LineSeries
+            LineGradient = new LineSeries
             {
                 StrokeThickness = 1,
                 Color = OxyColors.Cyan,
@@ -71,19 +73,23 @@ public class MyChart
             _algorithm.List.ForEach(x => {
                 var t1 = Math.Round(x.FirstElement, 2);
                 var t2 = Math.Round(x.SecondElement, 2);
-                line.Points.Add(
-                    new DataPoint(t1, t2));
-                calculations.Add(
-                    new Calculation(t1, t2, Math.Round(Peaks(t1, t2), 2)));
+                var value = Peaks(t1, t2);
+                if (!double.IsNaN(value))
+                {
+                    LineGradient.Points.Add(
+                        new DataPoint(t1, t2));
+                    calculations.Add(
+                        new Calculation(t1, t2, Math.Round(value, 2)));
+                }
              });
             var res = _algorithm.List.Last();
-            SetLabel(line.Title, res, Math.Round(Peaks(res.FirstElement, res.SecondElement), 2));
-            MyModel.Series.Add(line);
+            SetLabel(LineGradient.Title, res, Math.Round(Peaks(res.FirstElement, res.SecondElement), 2));
+            MyModel.Series.Add(LineGradient);
         }
         if (MainWindow.isSecondUsed)
         {
             _algorithm.Nesterov();
-            var line2 = new LineSeries
+            LineNesterov = new LineSeries
             {
                 StrokeThickness = 1,
                 Color = OxyColors.Gold,
@@ -94,44 +100,85 @@ public class MyChart
             _algorithm.ListNesterov.ForEach(x => {
                 var t1 = Math.Round(x.FirstElement, 2);
                 var t2 = Math.Round(x.SecondElement, 2);
-                line2.Points.Add(
-                    new DataPoint(t1, t2));
-                calculations2.Add(
-                    new Calculation(t1, t2, Math.Round(Peaks(t1, t2), 2)));
+                var value = Peaks(t1, t2);
+                if (!double.IsNaN(value))
+                {
+                    LineNesterov.Points.Add(
+                        new DataPoint(t1, t2));
+                    calculations2.Add(
+                        new Calculation(t1, t2, Math.Round(value, 2)));
+                }
             });
             var res = _algorithm.ListNesterov.Last();
-            SetLabel(line2.Title, res, Math.Round(Peaks(res.FirstElement, res.SecondElement), 2));
-            MyModel.Series.Add(line2);
+            SetLabel(LineNesterov.Title, res, Math.Round(Peaks(res.FirstElement, res.SecondElement), 2));
+            MyModel.Series.Add(LineNesterov);
             
         }
 
         if (MainWindow.isBox)
         {
-           
-            var box = new Box();
-            var points = box.BoxAlgorithm();
-            var line3 = new LineSeries
+            double anst1 = 0, anst2 = 0;
+            int countIter = 0;
+            _algorithm.Box(ref anst1, ref anst2, ref countIter);
+            LineBox = new LineSeries
             {
-                StrokeThickness = 1,
-                Color = OxyColors.Black,
+                StrokeThickness = 2,
+                Color = OxyColors.Red,
                 Title = "Метод Бокса",
-                TextColor = OxyColors.Black
+                TextColor = OxyColors.Red
 
             };
-            points.ForEach(x => {
-                var t1 = Math.Round(x.X1, 2);
-                var t2 = Math.Round(x.X2, 2);
-                line3.Points.Add(
-                    new DataPoint(t1, t2));
-                calculationsBox.Add(
-                    new Calculation(t1, t2, Math.Round(Peaks(t1, t2), 2)));
+            _algorithm.ListBox.ForEach(x => {
+                var t1 = Math.Round(x.FirstElement, 2);
+                var t2 = Math.Round(x.SecondElement, 2);
+                var value = Peaks(t1, t2);
+                if (!double.IsNaN(value))
+                {
+                    LineBox.Points.Add(
+                        new DataPoint(t1, t2));
+                    calculationsBox.Add(
+                        new Calculation(t1, t2, Math.Round(value, 2)));
+                }
             });
-            var res = points.Last();
-            var result = new MyTuple(res.X1, res.X2);
-            SetLabel(line3.Title, result, Math.Round(Peaks(res.X1, res.X2), 2));
-            MyModel.Series.Add(line3);
+            if (_algorithm.ListBox.Count > 0)
+            {
+                var res = _algorithm.ListBox.Last();
+                SetLabel(LineBox.Title, res, Math.Round(Peaks(res.FirstElement, res.SecondElement), 2));
+                MyModel.Series.Add(LineBox);
+            }
         }
-        new TableWindow(calculations, calculations2, calculationsBox).Show();
+
+        if (MainWindow.isGenetic)
+        {
+            _algorithm.GeneticAlgorithm();
+            LineGenetic = new LineSeries
+            {
+                StrokeThickness = 1,
+                Color = OxyColors.Magenta,
+                Title = "Генетический алгоритм",
+                TextColor = OxyColors.Magenta
+
+            };
+            _algorithm.ListGenetic.ForEach(x => {
+                var t1 = Math.Round(x.FirstElement, 2);
+                var t2 = Math.Round(x.SecondElement, 2);
+                var value = Peaks(t1, t2);
+                if (!double.IsNaN(value))
+                {
+                    LineGenetic.Points.Add(
+                        new DataPoint(t1, t2));
+                    calculationsGenetic.Add(
+                        new Calculation(t1, t2, Math.Round(value, 2)));
+                }
+            });
+            if (_algorithm.ListGenetic.Count > 0)
+            {
+                var res = _algorithm.ListGenetic.Last();
+                SetLabel(LineGenetic.Title, res, Math.Round(Peaks(res.FirstElement, res.SecondElement), 2));
+                MyModel.Series.Add(LineGenetic);
+            }
+        }
+        new TableWindow(calculations, calculations2, calculationsBox, calculationsGenetic).Show();
 
     }
     public PlotModel MyModel { get; private set; }
@@ -141,8 +188,17 @@ public class MyChart
     {
         var T1 = Math.Round(result.FirstElement, 2);
         var T2 = Math.Round(result.SecondElement, 2);
-        ResultText += $"{title}: T1: {T1}, " +
-            $"T2: {T2}, S: {answer * 100} у.е.\n";
+        double costPerKg = 100.0;
+        if (!double.IsNaN(answer))
+        {
+            double totalCost = Math.Round(answer * costPerKg, 2);
+            ResultText += $"{title}: T1 = {T1} °C, T2 = {T2} °C, Суммарная себестоимость = {totalCost} у.е.\n";
+        }
+        else
+        {
+            ResultText += $"{title}: T1 = {T1} °C, T2 = {T2} °C, недопустимая точка\n";
+        }
     }
+
 }
 
